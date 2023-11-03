@@ -4,18 +4,6 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 
-class User(AbstractUser):
-    USERNAME_FIELD = 'username'
-    
-    def __str__(self) -> str:
-        return self.email
-    
-    class Meta:
-        db_table = "tabUser"
-        verbose_name = 'User'
-        
-
-
 class Product(models.Model):
     id = models.BigAutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
