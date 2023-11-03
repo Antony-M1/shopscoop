@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#root {
+    width: 80vw;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid blueviolet;
+}
+
+#navbar{
+    width: 100%;
+}
+
+.rounded-image {
+    border-radius: 50%;
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+}
