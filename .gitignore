@@ -10,6 +10,9 @@ __pycache__/
 .vscode/
 .idea/
 
+# Django
+media/
+
 # Distribution / packaging
 .Python
 build/

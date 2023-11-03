@@ -9,3 +9,6 @@ Django, django, shopscoop
 # .env
 Basically the `.env` file contains the environment variables.
 Rename the **.env.example** to **.env** file and fill the needed variables.
+
+# Media
+Create a folder with the name of **media** inside the Project
