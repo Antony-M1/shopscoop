@@ -1,0 +1,2 @@
+# shopscoop
+Django, django, shopscoop
