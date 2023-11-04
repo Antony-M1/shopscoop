@@ -24,3 +24,13 @@ body {
 .navbar-brand {
     margin-left: 1rem;
 }
+
+
+#product-list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

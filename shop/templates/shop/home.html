@@ -20,8 +20,22 @@
     <div id="root">
         <div id="navbar">
             {% include 'shop/navbar.html' %}
+            <br>
+            <div id="product-list">
+              {% for data in product_data %}
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ MEDIA_URL }}{{ data.image }}" class="card-img-top" alt="Product Image Not Found 🥺">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
         </div>
     </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
