@@ -34,3 +34,43 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+
+
+#custom-product-card-image {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+}
+
+#custom-card-title {
+    height: 50px;
+    overflow: auto;
+    color: purple;
+}
+
+#produc-pricing{
+    display: flex;
+    flex-direction: column;
+}
+
+#product-offer-and-price{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+#product-percentage{
+    color: red;
+}
+
+#product-final-rate{
+    color: green;
+}
+
+#product-actual-rate{
+    color: #565959;
+    font-size: 15px;
+}
+
+    

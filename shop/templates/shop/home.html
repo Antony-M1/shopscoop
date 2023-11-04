@@ -24,11 +24,20 @@
             <div id="product-list">
               {% for data in product_data %}
                 <div class="card" style="width: 18rem;">
-                  <img src="{{ MEDIA_URL }}{{ data.image }}" class="card-img-top" alt="Product Image Not Found 🥺">
+                  <img id="custom-product-card-image" src="{{media_url}}{{ data.image }}" class="card-img-top" alt="Product Image Not Found 🥺">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p id="custom-card-title" class="card-title">{{data.name}}</p>
+                    <div id="produc-pricing">
+                      <div id="product-offer-and-price">
+                        <span id="product-percentage">-%{{data.offer_percentage}}</span>
+                        <b id="product-final-rate">₹{{data.final_rate}}</b>
+                      </div>
+                      <div>
+                        <span id="product-actual-rate">M.R.P ₹{{data.actual_rate}}</span>
+                      </div>  
+                    </div>
+                    <!-- <p class="card-text">{{data.description}}</p> -->
+                    <a href="{{data.affiliate_link}}" class="btn btn-primary" target="_blank">Go To</a>
                   </div>
                 </div>
               {% endfor %}
