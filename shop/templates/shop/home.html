@@ -22,8 +22,9 @@
         <div id="navbar">
             {% include 'shop/navbar.html' %}
             <br>
-            <div id="product-list">
-              {% for data in product_data %}
+            <div id="product-list" class="container">
+              <div class="product">
+                {% for data in product_data %}
                 <div class="card" style="width: 18rem;">
                   <img id="custom-product-card-image" src="{{media_url}}{{ data.image }}" class="card-img-top" alt="Product Image Not Found 🥺">
                   <div class="card-body">
@@ -41,36 +42,38 @@
                     <a href="{{data.affiliate_link}}" class="btn btn-primary" target="_blank">Go To</a>
                   </div>
                 </div>
-              {% endfor %}
+                {% endfor %}
+              </div>
+              
+              <div class="paginator">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                    {% if product_data.has_previous %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ product_data.previous_page_number }}" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                    
+                    {% for page_num in product_data.paginator.page_range %}
+                      <li class="page-item{% if product_data.number == page_num %} active{% endif %}">
+                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                      </li>
+                    {% endfor %}
+                    
+                    {% if product_data.has_next %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ product_data.next_page_number }}" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </nav>
+              </div>
             </div>
             
-            <div class="paginator">
-              <nav aria-label="Page navigation">
-                <ul class="pagination">
-                  {% if product_data.has_previous %}
-                    <li class="page-item">
-                      <a class="page-link" href="?page={{ product_data.previous_page_number }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  
-                  {% for page_num in product_data.paginator.page_range %}
-                    <li class="page-item{% if product_data.number == page_num %} active{% endif %}">
-                      <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-                    </li>
-                  {% endfor %}
-                  
-                  {% if product_data.has_next %}
-                    <li class="page-item">
-                      <a class="page-link" href="?page={{ product_data.next_page_number }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-              </nav>
-            </div>
           
           
 

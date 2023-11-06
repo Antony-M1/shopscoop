@@ -138,7 +138,7 @@ body {
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
     .contact-page, .about-page, .privacy-page{
         width: 80%;
     }
