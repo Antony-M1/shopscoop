@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Product, Contact
+from .models import Product, Contact, Blog
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import status
@@ -59,7 +59,12 @@ def chat(request):
 
 
 def blog(request):
-    return render(request, template_name='shop/blog.html', status=200)
+    blog_details = Blog.objects.all().order_by('-modified_at')
+    context = {
+        'blog_data': blog_details,
+        'media_url': settings.MEDIA_URL
+    }
+    return render(request, template_name='shop/blog.html', context=context, status=200)
 
 
 def faq(request):

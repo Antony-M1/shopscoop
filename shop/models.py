@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser 
+from markdownx.models import MarkdownxField
 
 # Create your models here.
 
@@ -42,7 +42,7 @@ class Contact(models.Model):
 class Blog(models.Model):
     image = models.ImageField(max_length=500, upload_to='blog/', null=True, blank=True)
     title = models.TextField()
-    description = models.TextField()
     short_description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    content = MarkdownxField()

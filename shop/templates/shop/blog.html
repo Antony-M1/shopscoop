@@ -12,6 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'shop/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'shop/css/blog.css' %}" />
 
     <title>Blog</title>
   </head>
@@ -21,13 +22,27 @@
         <div id="navbar">
             {% include 'shop/navbar.html' %}
             <br>
-            <div class="chat-with-me">
-                <center>
-                    <h2> This feature is under development </h2>
-                    <h3> please come back later </h3>
-                    <img src="{% static 'shop/images/under-construction.jpg' %}" class="img-fluid" alt="Under development" width="640px" height="385px">                    
-
-                </center>
+            <div id="blog" class="container">
+                <div id="blog-main-container" class="container-fluid">
+                  {% for blog in blog_data %}
+                  <div id="blog-card">
+                    <div id="blog-image">
+                      <img id="custom-blog-card-image" src="{{media_url}}{{ blog.image }}" alt="image-{{blog.id}}">
+                    </div>
+                    <div id="blog-body">
+                      <div id="blog-title">
+                        <a href="/blog/{{blog.id}}"><b>{{ blog.title }}</b></a>
+                      </div>
+                      <div id="blog-short-description">
+                        {{ blog.short_description}}
+                      </div>
+                      <div id="blog-modifed">
+                        Updated At : {{ blog.modified_at }}
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,42 @@
+#root{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+
+
+#custom-blog-card-image{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+#blog-card{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    /* border: 1px solid rgb(0, 0, 0); */
+    background-color: white;
+}
+
+#blog-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#blog-main-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#blog-short-description{
+    color: rgb(142, 150, 156);
+
+}
+
+#blog-modifed{
+    color: gray;
+}
