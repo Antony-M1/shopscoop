@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'shopscoop.middleware.custom_404_middleware'
 ]
 
 ROOT_URLCONF = 'shopscoop.urls'
