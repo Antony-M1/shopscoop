@@ -36,8 +36,8 @@ body {
 }
 
 
-#product-list {
-    padding: 0 50px;
+.product {
+    /* padding: 0 50px; */
     display: flex;
     flex-direction: row;
     /* column-gap: 10px;
@@ -47,6 +47,13 @@ body {
     gap: 30px;
 }
 
+#product-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
 #custom-product-card-image {
     height: 180px;
@@ -84,9 +91,12 @@ body {
     font-size: 15px;
 }
 
-.paginator{
-    margin: 0 0 0 50px;
-    /* margin-top: 50px; */
-    position: absolute;
-    bottom: 50px;
+/* .paginator{
+    max-height: 200px;
+} */
+
+@media only screen and (max-width: 1350px) {
+    #product-list {
+        padding: 0;
+    }
 }
