@@ -11,39 +11,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'shop/css/root-home.css' %}" />
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}" />
 
-    <title>Home</title>
+    <title>Chat</title>
   </head>
   <body>
     
-    <div id="root" class="root-home">
+    <div id="root">
         <div id="navbar">
             {% include 'shop/navbar.html' %}
             <br>
-            <div id="product-list">
-              {% for data in product_data %}
-                <div class="card" style="width: 18rem;">
-                  <img id="custom-product-card-image" src="{{media_url}}{{ data.image }}" class="card-img-top" alt="Product Image Not Found 🥺">
-                  <div class="card-body">
-                    <p id="custom-card-title" class="card-title">{{data.name}}</p>
-                    <div id="produc-pricing">
-                      <div id="product-offer-and-price">
-                        <span id="product-percentage">-%{{data.offer_percentage}}</span>
-                        <b id="product-final-rate">₹{{data.final_rate}}</b>
-                      </div>
-                      <div>
-                        <span id="product-actual-rate">M.R.P ₹{{data.actual_rate}}</span>
-                      </div>  
-                    </div>
-                    <!-- <p class="card-text">{{data.description}}</p> -->
-                    <a href="{{data.affiliate_link}}" class="btn btn-primary" target="_blank">Go To</a>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-            <div id>
-
+            <div class="chat-with-me">
+                <center>
+                    <h2> This feature is under development </h2>
+                    <h3> please come back later </h3>
+                </center>
             </div>
         </div>
     </div>

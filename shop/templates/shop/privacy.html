@@ -1,0 +1,103 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}" />
+
+    <title>Privacy</title>
+  </head>
+  <body>
+    
+    <div id="root">
+        <div id="navbar">
+            {% include 'shop/navbar.html' %}
+            <br>
+            <div class="privacy-page">
+                <h1 class="title">ShopScoop Privacy Policy</h1>
+                <div class="content">
+                    <p><strong>Last updated: October 29, 2023.</strong></p>
+                    <p>At ShopScoop, we value your privacy and are committed to handling your personal information carefully and sensibly. This Privacy Notice outlines how ShopScoop collects and processes your personal information when you use our website, services, and applications (collectively "ShopScoop Services").</p>
+                    <p>By using ShopScoop Services, you agree to our use of your personal information in accordance with this Privacy Notice, which may be updated at our discretion. You also consent to us collecting, storing, processing, transferring, and sharing your personal information with third parties or service providers for the purposes described in this Privacy Notice.</p>
+                    <p>At ShopScoop, we believe in transparency and want to clarify that the prices of the products featured on our platform may vary from day to day. We don't determine these prices; instead, we fetch them directly from trusted e-commerce sites like Amazon and Flipkart. As a result, we want to emphasize that we are not responsible for these price fluctuations. While we strive to provide accurate and up-to-date information, price changes are beyond our control. Our goal is to assist you in finding the best deals and offers, and we appreciate your understanding of this aspect of our service.</p>
+                    <p>Personal information covered by this Privacy Notice will be collected and managed by ShopScoop.</p>
+                </div>
+                <!-- <header>
+                  <h1>Privacy Policy</h1>
+              </header> -->
+              <div class="container">
+                  <div class="list-content">
+                    <ul>
+                      <li><a href="#section1">Information We Collect</a></li>
+                      <li><a href="#section2">How We Use Your Information</a></li>
+                      <li><a href="#section3">Information Sharing</a></li>
+                      <li><a href="#section4">Your Choices</a></li>
+                      <li><a href="#section5">Security</a></li>
+                      <li><a href="#section6">Changes to This Policy</a></li>
+                      <!-- <li><a href="#section7">Contact Us</a></li> -->
+                    </ul>
+                  </div>
+
+                  <section id="section1">
+                      <h4> <strong>1. Information We Collect </strong></h4>
+                      <p>We collect basic user information to enhance your shopping experience. We do not sell your data.</p>
+                  </section>
+                  <section id="section2">
+                      <h4> <strong>2. How We Use Your Information </strong></h4>
+                      <p>We use your data to provide personalized deals and to keep you informed about our services.</p>
+                  </section>
+                  <section id="section3">
+                      <h4> <strong>3. Information Sharing </strong></h4>
+                      <p>We do not sell, trade, or rent your personal information to third parties. However, we may share information with:</p>
+                      <ul>
+                          <li>Service Providers: Trusted third-party service providers who assist us in delivering our services.</li>
+                          <li>Legal Requirements: When required by law or to protect our legal rights.</li>
+                      </ul>
+                  </section>
+                  <section id="section4">
+                      <h4> <strong>4. Your Choices </strong></h4>
+                      <p>You have the right to:</p>
+                      <ul>
+                          <li>Access and update your personal information through your ShopScoop account.</li>
+                          <li>Opt out of receiving marketing communications from us.</li>
+                          <li>Delete your ShopScoop account at any time.</li>
+                      </ul>
+                  </section>
+                  <section id="section5">
+                      <h4> <strong>5. Security </strong></h4>
+                      <p>We take the security of your information seriously. We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is entirely secure, and we cannot guarantee the absolute security of your data.</p>
+                  </section>
+                  <section id="section6">
+                      <h4> <strong>6. Changes to This Policy </strong></h4>
+                      <p>We may update this Privacy Policy to reflect changes in our practices or for legal reasons. We recommend reviewing this policy periodically.</p>
+                  </section>
+                  <!-- <section id="section7">
+                      <h4> <strong>7. Contact Us </strong></h4>
+                      <p>If you have any questions or concerns about this Privacy Policy, please contact us at [insert contact information].</p>
+                  </section> -->
+            
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

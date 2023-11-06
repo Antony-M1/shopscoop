@@ -25,7 +25,24 @@ class Product(models.Model):
         verbose_name = 'Product'
         
 
+class Contact(models.Model):
+    email = models.EmailField(max_length=156, null=True, blank=True)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    message = models.TextField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.email
+    
+    class Meta:
+        db_table = "tabContact"
+        verbose_name = "Contact"
 
 
-        
-        
+class Blog(models.Model):
+    image = models.ImageField(max_length=500, upload_to='blog/', null=True, blank=True)
+    title = models.TextField()
+    description = models.TextField()
+    short_description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
