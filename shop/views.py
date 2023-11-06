@@ -42,19 +42,29 @@ def blog(request):
     return render(request, template_name='shop/blog.html', status=200)
 
 
+def faq(request):
+    return render(request, template_name='shop/faq.html', status=200)
+
+
 def contact_api(request):
-    if request.method == 'Post':
-        data = request.data
+    if request.method == 'POST':
+        data = dict(request.POST) if request.POST else None
         if not data:
             response_data = {
                 'message': 'Invalid Request'
             }
-            return Response(data=response_data, status=status.HTTP_400_BAD_REQUEST)
+            return render(request, template_name='shop/contact_response.html', context=response_data)
 
+        data = {
+            'email': data.get('email')[0] if isinstance(data.get('email'), list) else data.get('email'),
+            'phone_number': data.get('phone_number')[0] if isinstance(data.get('phone_number'), list) else data.get('phone_number'),
+            'message': data.get('message')[0] if isinstance(data.get('message'), list) else data.get('message'),
+        }
         contact = Contact(**data)
         contact.save()
 
         response_data = {
-            'message': 'Thanks For Contacting Us The ShopScoop Team Will Contact You Back In 48hours'
+            'message1': 'Thanks for contacting us',
+            'message2': 'Our team will get back to you in 3 to 5 working days.'
         }
-        return Response(data=response_data, status=status.HTTP_200_OK)
+        return render(request, template_name='shop/contact_response.html', context=response_data)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Product,
+    Product, Contact, Blog
 )
 # Register your models here.
 
@@ -14,3 +14,21 @@ class AdminProduct(admin.ModelAdmin):
     prepopulated_fields = {'name': ('name',)}
     
 admin.site.register(Product, AdminProduct)
+
+
+class AdminContact(admin.ModelAdmin):
+    list_display = ('id', 'created_at', 'email', 'phone_number')
+    list_filter = ('id', 'created_at', 'email', 'phone_number')
+    search_fields = ('id', 'email', 'phone_number')
+    prepopulated_fields = {'email': ('email',)}
+
+admin.site.register(Contact, AdminContact)
+
+
+class AdminBlog(admin.ModelAdmin):
+    list_display = ('id', 'created_at', 'title')
+    list_filter = ('id', 'created_at', 'title')
+    search_fields = ('id', 'title')
+    prepopulated_fields = {'title': ('title',)}
+
+admin.site.register(Blog, AdminBlog)

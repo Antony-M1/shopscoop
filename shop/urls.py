@@ -10,5 +10,7 @@ urlpatterns = [
     path('about-us/', views.about, name='about-us'),
     path('contact-us/', views.contact, name='contact-us'),
     path('chat/', views.chat, name='chat'),
-    path('blog/', views.chat, name='blog'),
+    path('blog/', views.blog, name='blog'),
+    path('faq/', views.faq, name='faq'),
+    path('api/contact/', views.contact_api, name='contact_api'),
 ] 

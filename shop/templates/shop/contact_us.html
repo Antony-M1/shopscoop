@@ -27,27 +27,28 @@
                     <section>
                         <h4> <strong> Contact Information </strong> </h4> 
                         <p>If you have any questions, comments, or concerns, feel free to get in touch with us. We're here to help you!</p>
-                        <p><strong>Email:</strong> contact@shopscoop.com</p>
-                        <p><strong>Phone:</strong> (123) 456-7890</p>
+                        <p><strong>Email:</strong> shopscoop.in@gmail.com</p>
+                        <p><strong>Phone:</strong> (+91) 9345506936</p>
                     </section>
                     <section>
                         <h4> <strong> Contact Form </strong> </h4> 
                         <p>You can also reach out to us using the contact form below. Please fill out the required fields, and we'll respond to your message as soon as possible.</p>
-                        <form>
+                        <form action="/api/contact/" method="post">
+                            {% csrf_token %}
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Email address</label>
-                              <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              <label for="exampleInputEmail1" class="form-label">Email address <span style="color: red;">*</span></label>
+                              <input name="email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
-                                <label for="PhoneNumber" class="form-label">Phone Number</label>
-                                <input required type="text" class="form-control" id="PhoneNumber">
+                                <label for="PhoneNumber" class="form-label">Phone Number <span style="color: red;">*</span></label>
+                                <input name="phone_number" required type="text" class="form-control" id="PhoneNumber">
                                 <div id="emailHelp" class="form-text">We'll never share your phone number with anyone else.</div>
                             </div>
                             <div class="mb-3">
-                              <label for="Message" class="form-label">Message</label>
+                              <label for="Message" class="form-label">Message <span style="color: red;">*</span></label>
                               <!-- <input type="textarea" class="form-control" id="Message"> -->
-                              <textarea required class="form-control" aria-label="With textarea"></textarea>
+                              <textarea name="message" required class="form-control" aria-label="With textarea"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-primary">Submit</button>
