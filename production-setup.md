@@ -44,3 +44,22 @@ Install all the requirements packages using this command
 pip install -r requirements.txt
 ```
 If your facing any issue while install `psycopg2` refer this [link](https://stackoverflow.com/questions/74727501/error-could-not-build-wheels-for-psycopg2-which-is-required-to-install-pyproje)
+
+## Step 3
+Migrate the changes
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+Collect the static files
+```
+python manage.py collectstatic
+```
+
+## Step 4
+**[Add Inbound rules](https://github.com/Antony-M1/django-production-setup/blob/main/prod_docs/django-with-gunicorn-and-nginx.md#add-inbound-rules)** Have to add in EC2
+
+Uvicorn
+```
+uvicorn shopscoop.asgi:application
+```
