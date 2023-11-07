@@ -6,13 +6,14 @@ from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import markdown
 
 # Create your views here.
 
 
 def home(request):
     product_details = Product.objects.all().order_by('created_at')
-    paginator = Paginator(product_details, 5)
+    paginator = Paginator(product_details, 8)
 
     page = request.GET.get('page')
     try:
@@ -93,3 +94,16 @@ def contact_api(request):
             'message2': 'Our team will get back to you in 3 to 5 working days.'
         }
         return render(request, template_name='shop/contact_response.html', context=response_data)
+
+
+
+def blog_detail(request, blog_id):
+    blog_data = Blog.objects.get(id=blog_id)
+    html_content = markdown.markdown(blog_data.content)
+    blog_data.html_content = html_content
+    context = {
+        'blog': blog_data,
+        'html_content': html_content,
+        'media_url': settings.MEDIA_URL
+    }
+    return render(request, template_name='shop/blog_detail.html', context=context)

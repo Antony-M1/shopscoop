@@ -1,0 +1,28 @@
+#root{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+
+body {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+#blog-detials{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+#blog-image{
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+}
+
+#blog-title{
+    padding-top: 20px;
+}
