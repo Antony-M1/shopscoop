@@ -17,5 +17,9 @@ the default user is `ubuntu` make sure which user your using.
 
 # Prequisites
 * [Python3.11](https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/)
-* [PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart)
+* [PostgreSQL 16](https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart)
+    * [Postgresql 16 Setup](https://computingforgeeks.com/install-and-configure-postgresql-on-ubuntu/)
+
+Make sure you have the above service installed in your ubuntu machine.
+
 
