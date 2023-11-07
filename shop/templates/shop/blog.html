@@ -22,7 +22,8 @@
         <div id="navbar">
             {% include 'shop/navbar.html' %}
             <br>
-            <div id="blog" class="container">
+            <div id="blog-container" class="container">
+              <div id="blog">
                 <div id="blog-main-container" class="container-fluid">
                   {% for blog in blog_data %}
                   <div id="blog-card">
@@ -43,6 +44,36 @@
                   </div>
                   {% endfor %}
                 </div>
+
+              </div>
+              <div class="paginator">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                    {% if blog_data.has_previous %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ blog_data.previous_page_number }}" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                    
+                    {% for page_num in blog_data.paginator.page_range %}
+                      <li class="page-item{% if blog_data.number == page_num %} active{% endif %}">
+                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                      </li>
+                    {% endfor %}
+                    
+                    {% if blog_data.has_next %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ blog_data.next_page_number }}" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </nav>
+              </div>
+            </div>
             </div>
         </div>
     </div>

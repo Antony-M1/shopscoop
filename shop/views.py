@@ -33,11 +33,24 @@ def home(request):
 
 
 def today_deals(request):
-    today = datetime.datetime.now()
+    today = datetime.datetime.now().date()
     product_details = Product.objects.all()
     product_details = product_details.filter(created_at__gte=today)
+
+    paginator = Paginator(product_details, 8)
+
+    page = request.GET.get('page')
+    try:
+        paginated_product_details = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        paginated_product_details = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        paginated_product_details = paginator.page(paginator.num_pages)
+
     context = {
-        'product_data': product_details,
+        'product_data': paginated_product_details,
         'media_url': settings.MEDIA_URL
     }
     return render(request, template_name='shop/today_deals.html', status=200, context=context)
@@ -61,8 +74,20 @@ def chat(request):
 
 def blog(request):
     blog_details = Blog.objects.all().order_by('-modified_at')
+    paginator = Paginator(blog_details, 5)
+
+    page = request.GET.get('page')
+    try:
+        paginated_blog_details = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        paginated_blog_details = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        paginated_blog_details = paginator.page(paginator.num_pages)
+
     context = {
-        'blog_data': blog_details,
+        'blog_data': paginated_blog_details,
         'media_url': settings.MEDIA_URL
     }
     return render(request, template_name='shop/blog.html', context=context, status=200)
@@ -98,12 +123,15 @@ def contact_api(request):
 
 
 def blog_detail(request, blog_id):
-    blog_data = Blog.objects.get(id=blog_id)
-    html_content = markdown.markdown(blog_data.content)
-    blog_data.html_content = html_content
-    context = {
-        'blog': blog_data,
-        'html_content': html_content,
-        'media_url': settings.MEDIA_URL
-    }
-    return render(request, template_name='shop/blog_detail.html', context=context)
+    try:
+        blog_data = Blog.objects.get(id=blog_id)
+        html_content = markdown.markdown(blog_data.content)
+        blog_data.html_content = html_content
+        context = {
+            'blog': blog_data,
+            'html_content': html_content,
+            'media_url': settings.MEDIA_URL
+        }
+        return render(request, template_name='shop/blog_detail.html', context=context)
+    except:
+        return render(request, 'shop/404.html', status=404)
