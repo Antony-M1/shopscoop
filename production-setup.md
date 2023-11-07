@@ -175,13 +175,23 @@ server {
 
 Save and close the file when We're finished. Now we can enable the file by linking it to the sites-enabled directory
 
-```sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled```
+```
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+```
+If already exsists
+```
+sudo ln -sf /etc/nginx/sites-available/shopscoop /etc/nginx/sites-enabled
+```
 Test our Nginx configuration for syntax errors by typing
 
-```sudo nginx -t```
+```
+sudo nginx -t
+```
 If no errors are reported, go ahead and restart Nginx by typing:
 
-```sudo systemctl restart nginx```
+```
+sudo systemctl restart nginx
+```
 Finally, We will need to open up our firewall to normal traffic on port 80. Since we no longer need access to the development server, We can remove the rule to open port 8000 as well:
 ```
 sudo ufw delete allow 8000
