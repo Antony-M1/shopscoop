@@ -22,3 +22,25 @@ the default user is `ubuntu` make sure which user your using.
 
 Make sure you have the above service installed in your ubuntu machine.
 
+# Get Started
+## Step 1
+Clone the project
+```
+git clone https://github.com/Antony-M1/shopscoop.git
+```
+Create the `.env` file from `.env.example` and fill the needed data
+
+## Step 2
+Create the `environment` using `python 3.11`
+```
+python3.11 -m venv env
+```
+Activate the environment using this command
+```
+source env/bin/activate
+```
+Install all the requirements packages using this command
+```
+pip install -r requirements.txt
+```
+If your facing any issue while install `psycopg2` refer this [link](https://stackoverflow.com/questions/74727501/error-could-not-build-wheels-for-psycopg2-which-is-required-to-install-pyproje)
