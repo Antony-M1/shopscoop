@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'corsheaders'
 ]
 
-CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(',')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
