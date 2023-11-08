@@ -207,3 +207,10 @@ restart the `Nginx`
 ```
 sudo systemctl restart nginx
 ```
+
+# Update Code
+Whenever you updating the code, run these two commands
+```
+sudo systemctl restart gunicorn.service
+sudo systemctl restart nginx
+```
