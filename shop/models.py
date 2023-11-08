@@ -46,3 +46,17 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     content = MarkdownxField()
+
+
+class FAQ(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self) -> str:
+        return self.question
+    
+    class Meta:
+        db_table = 'tabFAQ'
+        verbose_name = 'FAQ'

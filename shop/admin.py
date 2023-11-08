@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Product, Contact, Blog
+    Product, Contact, Blog, FAQ
 )
 # Register your models here.
 
@@ -32,3 +32,12 @@ class AdminBlog(admin.ModelAdmin):
     prepopulated_fields = {'title': ('title',)}
 
 admin.site.register(Blog, AdminBlog)
+
+
+class AdminFAQ(admin.ModelAdmin):
+    list_display = ('id', 'question')
+    list_filter = ('id', 'created_at', 'question')
+    search_fields = ('id', 'question')
+    prepopulated_fields = {'question': ('question',)}
+
+admin.site.register(FAQ, AdminFAQ)

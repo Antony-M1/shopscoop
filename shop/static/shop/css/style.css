@@ -132,11 +132,17 @@ body {
     margin-top: 20px;
 }
 
-/* #not-found-img{
-    width: 500px;
-    margin-top: 50px;
-} */
+#faq-page-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 
+#faq-page-home > .paginator{
+    display: flex;
+    justify-content: center;
+}
 
 @media only screen and (max-width: 1050px) {
     .contact-page, .about-page, .privacy-page{

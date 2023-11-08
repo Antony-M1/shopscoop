@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Product, Contact, Blog
+from .models import Product, Contact, Blog, FAQ
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import status
@@ -94,7 +94,24 @@ def blog(request):
 
 
 def faq(request):
-    return render(request, template_name='shop/faq.html', status=200)
+    faq_details = FAQ.objects.all()
+    paginator = Paginator(faq_details, 10)
+
+    page = request.GET.get('page')
+    try:
+        paginated_faq_details = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        paginated_faq_details = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        paginated_faq_details = paginator.page(paginator.num_pages)
+    
+    context = {
+        'faq_details': paginated_faq_details
+    }
+
+    return render(request, template_name='shop/faq.html', status=200, context=context)
 
 
 def contact_api(request):
