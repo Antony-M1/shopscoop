@@ -198,3 +198,12 @@ sudo ufw delete allow 8000
 sudo ufw allow 'Nginx Full'
 ```
 We should now be able to go to our server’s domain or IP address to view our application.
+
+Check the site it is serving the static file if not please add this command & also if your getting `404` please run this command
+```
+sudo usermod -a -G ubuntu www-data
+```
+restart the `Nginx`
+```
+sudo systemctl restart nginx
+```
