@@ -12,6 +12,7 @@ __pycache__/
 
 # Django
 media/
+static/
 
 # Distribution / packaging
 .Python
