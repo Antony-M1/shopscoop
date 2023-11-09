@@ -76,59 +76,29 @@ body {
     font-size: 15px;
 }
 
-    
-.privacy-page{
-    margin: 0 40px;
-    width: 50%;
-}
-
 .privacy-page > .title{
-    margin: 10px 30px;
     margin-bottom: 20px;
     border-bottom: double;
     padding-bottom: 15px;
 }
 
-.privacy-page > .content{
-    margin: 25px 0 0 40px;
-}
-
-.privacy-page > .container{
-    margin: 25px 0 0 40px;
-}
-
-
-.about-page{
-    margin: 0 40px;
-    width: 50%;
-}
-
-.about-page > .container{
-    margin: 25px 0 0 30px;
+.about-page > .content{
     margin-top: 20px;
 }
 
 .about-page > .title{
-    margin: 10px 40px;
     margin-bottom: 20px;
     border-bottom: double;
     padding-bottom: 15px;
-}
-
-.contact-page{
-    margin: 0 40px;
-    width: 50%;
 }
 
 .contact-page > .title{
-    margin: 10px 40px;
     margin-bottom: 20px;
     border-bottom: double;
     padding-bottom: 15px;
 }
 
-.contact-page > .container{
-    margin: 25px 0 0 30px;
+.contact-page > .content{
     margin-top: 20px;
 }
 
@@ -147,5 +117,29 @@ body {
 @media only screen and (max-width: 1050px) {
     .contact-page, .about-page, .privacy-page{
         width: 80%;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .about-page{
+        margin: 0 40px;
+        width: 50%;
+    }
+    .contact-page{
+        margin: 0 40px;
+        width: 50%;
+    }
+    .privacy-page{
+        margin: 0 40px;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .about-page > .content, .contact-page > .content, .privacy-page > .container-content{
+        margin: 0;
+    }
+    .about-page > .title, .contact-page > .title, .privacy-page > .title{
+        margin: 0 0 10px 0;
     }
 }
