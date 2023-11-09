@@ -12,7 +12,7 @@ import markdown
 
 
 def home(request):
-    product_details = Product.objects.all().order_by('created_at')
+    product_details = Product.objects.all().order_by('-created_at')
     paginator = Paginator(product_details, 8)
 
     page = request.GET.get('page')
@@ -34,7 +34,7 @@ def home(request):
 
 def today_deals(request):
     today = datetime.datetime.now().date()
-    product_details = Product.objects.all()
+    product_details = Product.objects.all().order_by('-created_at')
     product_details = product_details.filter(created_at__gte=today)
 
     paginator = Paginator(product_details, 8)
