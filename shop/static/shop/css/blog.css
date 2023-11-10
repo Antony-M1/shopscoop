@@ -1,14 +1,3 @@
-body{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    
-}
-
-#root{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-}
-
 #custom-blog-card-image{
     height: 150px;
     width: 150px;
@@ -19,8 +8,9 @@ body{
     display: flex;
     flex-direction: row;
     column-gap: 10px;
-    /* border: 1px solid rgb(0, 0, 0); */
     background-color: white;
+    height: 175px;
+    overflow: auto;
 }
 
 #blog-body{
@@ -51,4 +41,11 @@ body{
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+@media only screen and (min-width: 750px) {
+    #blog-container{
+        margin: 0 40px;
+        width: 50%;    
+    }
 }
