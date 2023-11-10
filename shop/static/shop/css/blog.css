@@ -10,14 +10,10 @@
     column-gap: 10px;
     background-color: white;
     height: 175px;
-    overflow: auto;
 }
 
 #blog-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+    overflow: auto;
 }
 
 #blog-main-container{
@@ -44,6 +40,11 @@
 }
 
 @media only screen and (min-width: 750px) {
+    #blog-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     #blog-container{
         margin: 0 40px;
         width: 50%;    
