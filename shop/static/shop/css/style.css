@@ -102,6 +102,16 @@ body {
     margin-top: 20px;
 }
 
+.terms-condition-page > .title{
+    margin-bottom: 20px;
+    border-bottom: double;
+    padding-bottom: 15px;
+}
+
+.terms-condition-page > .content{
+    margin-top: 20px;
+}
+
 #faq-page-home{
     display: flex;
     flex-direction: column;
@@ -115,7 +125,7 @@ body {
 }
 
 @media only screen and (max-width: 1050px) {
-    .contact-page, .about-page, .privacy-page{
+    .contact-page, .about-page, .privacy-page, .terms-condition-page{
         width: 80%;
     }
 }
@@ -133,13 +143,17 @@ body {
         margin: 0 40px;
         width: 50%;
     }
+    .terms-condition-page{
+        margin: 0 40px;
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 750px) {
-    .about-page > .content, .contact-page > .content, .privacy-page > .container-content{
+    .about-page > .content, .contact-page > .content, .privacy-page > .container-content, .terms-condition-page > .content{
         margin: 0;
     }
-    .about-page > .title, .contact-page > .title, .privacy-page > .title{
+    .about-page > .title, .contact-page > .title, .privacy-page > .title, .terms-condition-page > .title{
         margin: 0 0 10px 0;
     }
 }

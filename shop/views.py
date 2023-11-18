@@ -72,6 +72,10 @@ def chat(request):
     return render(request, template_name='shop/chat.html', status=200)
 
 
+def terms_condition(request):
+    return render(request, template_name='shop/terms_condition.html', status=200)
+
+
 def blog(request):
     blog_details = Blog.objects.all().order_by('-modified_at')
     paginator = Paginator(blog_details, 5)
