@@ -15,7 +15,8 @@ Create a folder with the name of **media** inside the Project
 
 # Issues
 <details>
-  <summary>psycopg installing issues<summary>
+  <summary>psycopg installing issues</summary>
+
 
 If you facing any issues while install `psycopg` please refere this [link](https://stackoverflow.com/questions/19843945/psycopg-python-h-no-such-file-or-directory/74544823#74544823).
 
