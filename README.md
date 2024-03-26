@@ -13,6 +13,22 @@ Rename the **.env.example** to **.env** file and fill the needed variables.
 # Media
 Create a folder with the name of **media** inside the Project
 
+
+# Postgres backup and restore
+<details>
+  <summary> postgres backup </summary>
+  ```
+  pg_dump -h localhost -U {postgres_user} -d {db_name} -Fc -f {filename}.dump
+  ```
+</details>
+
+<details>
+  <summary>postgres restore </summary>
+  ```
+  pg_restore -h localhost -p 5432 -U {postgres_user} -d {db_name} {filename}.dump
+  ```
+</details>
+
 # Issues
 <details>
   <summary>psycopg installing issues</summary>
